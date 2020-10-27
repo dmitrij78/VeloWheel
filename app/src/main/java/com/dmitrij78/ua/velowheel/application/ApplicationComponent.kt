@@ -1,12 +1,15 @@
 package com.dmitrij78.ua.velowheel.application
 
 import dagger.Component
+import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     modules = [
-        ApplicationModule::class
+        AndroidInjectionModule::class,
+        ApplicationModule::class,
+        ActivityBindingModule::class
     ]
 )
 interface ApplicationComponent {
