@@ -1,15 +1,12 @@
-package com.dmitrij78.ua.velowheel.base
+package com.dmitrij78.ua.velowheel.application
 
 import androidx.test.core.app.ApplicationProvider
-import com.dmitrij78.ua.velowheel.application.App
-import com.dmitrij78.ua.velowheel.application.ApplicationComponent
-import com.dmitrij78.ua.velowheel.application.ApplicationModule
 
 class TestApplication : App() {
 
     override fun initComponent(): ApplicationComponent {
         return DaggerTestApplicationComponent.builder()
-            .applicationModule(ApplicationModule(this))
+            .application(this)
             .build()
     }
 

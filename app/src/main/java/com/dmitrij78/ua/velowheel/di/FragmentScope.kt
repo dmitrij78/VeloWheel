@@ -1,7 +1,7 @@
 package com.dmitrij78.ua.velowheel.di
 
-/*
+import javax.inject.Scope
+
 @Scope
-@MustBeDocumented
 @Retention(AnnotationRetention.RUNTIME)
-annotation class FragmentScope*/
+annotation class FragmentScope

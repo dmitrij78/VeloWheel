@@ -1,16 +1,13 @@
-package com.dmitrij78.ua.velowheel.ui
+package com.dmitrij78.ua.velowheel.ui.fragments
 
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.dmitrij78.ua.velowheel.R
 import com.dmitrij78.ua.velowheel.base.BaseFragment
 
 class SplashFragment : BaseFragment() {
-
-    private val viewModel: SplashViewModel by activityViewModels()
 
     companion object {
         fun newInstance() = SplashFragment()
@@ -21,7 +18,7 @@ class SplashFragment : BaseFragment() {
 
         val splashText = view.findViewById<TextView>(R.id.splashText)
 
-        val splashViewModel = ViewModelProvider(this)[SplashViewModel::class.java]
+        val splashViewModel = createViewModel<SplashViewModel>()
 
         splashViewModel.splashText.observe(viewLifecycleOwner, { text ->
             splashText.text = text

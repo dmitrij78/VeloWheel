@@ -1,15 +1,15 @@
 package com.dmitrij78.ua.velowheel.application
 
-import android.app.Application
 import com.dmitrij78.ua.velowheel.di.ActivityScope
-import com.dmitrij78.ua.velowheel.ui.HomeActivity
+import com.dmitrij78.ua.velowheel.ui.activity.HomeActivity
+import com.dmitrij78.ua.velowheel.ui.activity.HomeActivityModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
-abstract class ActivityBindingModule(private val application: Application) {
+abstract class ActivityBindingModule {
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = [])
-    abstract fun contributeActivity(): HomeActivity
+    @ContributesAndroidInjector(modules = [HomeActivityModule::class])
+    abstract fun contributeHomeActivity(): HomeActivity
 }

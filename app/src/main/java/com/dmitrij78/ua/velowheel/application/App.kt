@@ -21,7 +21,7 @@ open class App : Application(), HasAndroidInjector {
 
     protected open fun initComponent(): ApplicationComponent {
         return DaggerApplicationComponent.builder()
-            .applicationModule(ApplicationModule(this))
+            .application(this)
             .build()
     }
 
